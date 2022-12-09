@@ -82,7 +82,7 @@ public class Contact {
 				+ ", state=" + state + ", zip=" + zip + ", phone=" + phone + "]";
 	}
 	
-	
+
 }
 	
 
