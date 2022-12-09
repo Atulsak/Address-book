@@ -81,7 +81,16 @@ public class Contact {
 		return "Contact [firstName=" + firstName + ", lastName=" + lastName + ", address=" + address + ", city=" + city
 				+ ", state=" + state + ", zip=" + zip + ", phone=" + phone + "]";
 	}
-	
+	public static void main(String[] args) {
+	      Contact obj = new Contact("ravi", "lokhand", "Ring Road","Mumbai", "mh",00001 , "123456");
+	      System.out.println(obj.getFirstName());
+	      System.out.println(obj.getLastName());
+	      System.out.println(obj.getCity());
+	      System.out.println(obj.getAddress());
+	      System.out.println(obj.getState());
+	      System.out.println(obj.getZip());
+	      System.out.println(obj.getPhone());
+		}
 	
 }
 	
