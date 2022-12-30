@@ -2,18 +2,20 @@ package com.AddressBook;
 
 import java.util.*;
 
-public class AddresssBook {
 
-	 static Scanner sc = new Scanner(System.in);
-	    static List<contact> cont = new ArrayList<>();
+
+	public class AddressBook {
+
+	    static Scanner sc = new Scanner(System.in);
+	    static List<ContactPerson> cont = new ArrayList<>();
 //	    Uses information was storing.
 	    public static void addContact(String firstName, String lastName, String email, long phoneNumber, int zip, String city, String state, String address){
-	        cont.add(new contact(firstName,lastName,email,phoneNumber,zip,city,state,address));
+	        cont.add(new ContactPerson(firstName,lastName,email,phoneNumber,zip,city,state,address));
 	    }
 
 //	    Editing method is defined
 	    public static void editContact(String firstName){
-	        for (contact obj : cont){
+	        for (ContactPerson obj : cont){
 	            if(firstName.equals(obj.getFirstName())){
 	                obj.edit();
 	            }
@@ -29,7 +31,7 @@ public class AddresssBook {
 	//   Returns a non-negative integer if a Contact with phone is exists corresponding
 	//   To which place in the arrayList the Contact is stored. Returns -1
 	    public static int haveContact(String firstName){
-	        for(contact object : cont){
+	        for(ContactPerson object : cont){
 	            if(object.getFirstName().equals(firstName)){
 	                return cont.indexOf(object);
 	            }
@@ -96,7 +98,7 @@ public class AddresssBook {
 	        }
 
 	        //        Display
-	        for(contact objects : cont){
+	        for(ContactPerson objects : cont){
 	            System.out.println(objects);
 	        }
 	    }

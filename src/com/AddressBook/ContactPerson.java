@@ -2,7 +2,7 @@ package com.AddressBook;
 
 import java.util.Scanner;
 
-public class contact {
+public class ContactPerson {
 	
 	  Scanner sc = new Scanner(System.in);
 	    private String firstName;
@@ -16,7 +16,7 @@ public class contact {
 	    private String address;
 
 //	    Creating the public method to assign the contactPerson value
-	    public contact(String firstName, String lastName, String email, long phoneNumber, int zip, String city, String state, String address){
+	    public ContactPerson(String firstName, String lastName, String email, long phoneNumber, int zip, String city, String state, String address){
 	        this.firstName = firstName;
 	        this.lastName = lastName;
 	        this.email = email;
