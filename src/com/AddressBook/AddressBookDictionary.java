@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class AddressBookDictionary {
 
-	 static HashMap<String, AddressBook> dic = new HashMap<>();
+	   static HashMap<String, AddressBook> dic = new HashMap<>();
 	    static Scanner sc = new Scanner(System.in);
 
 	    public static void main(String[] args) {
@@ -19,7 +19,8 @@ public class AddressBookDictionary {
 	            System.out.println("3. Please 3 to view the Person in City or State");
 	            System.out.println("4. Please 4 to view the Person by City or State");
 	            System.out.println("5. Please 5 to view the count by City or State");
-	            System.out.println("6. Please 6 to exit");
+	            System.out.println("6. Please 6 to short by Name");
+	            System.out.println("7. Please 7 to exit");
 	            System.out.println();
 
 	            System.out.print("Please enter the Chosen Option ::: ");
@@ -99,6 +100,14 @@ public class AddressBookDictionary {
 	                    }
 	                    break;
 	                case 6:
+	                    for (Map.Entry<String, AddressBook> ele : dic.entrySet()){
+	                        System.out.println("Sorting entries for AddressBook of "+ ele.getKey() + " by Name :: ");
+	                        ele.getValue().cont.stream().sorted((con1,con2) ->
+	                            con1.getFirstName().compareToIgnoreCase(con2.getFirstName())
+	                        ).forEach((ele2) -> System.out.println(ele2));
+	                    }
+	                    break;
+	                case 7:
 	                    flag = false;
 	                    break;
 	                default:
@@ -106,7 +115,5 @@ public class AddressBookDictionary {
 	                    break;
 	            }
 	        }while (flag);
-	        
-	        
 	    }
 }

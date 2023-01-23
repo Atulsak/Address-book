@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.Scanner;
 
 public class AddressBook {
-	  static Scanner sc = new Scanner(System.in);
+	 static Scanner sc = new Scanner(System.in);
 	    static List<ContactPerson> cont = new ArrayList<>();
 
 	    List<ContactPerson> contactsCityList = new ArrayList<>();
@@ -148,6 +148,5 @@ public class AddressBook {
 	                    break;
 	            }
 	        }while (flag);
-	        
-    }
+	    }
 }
