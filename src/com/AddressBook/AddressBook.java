@@ -6,7 +6,7 @@ import java.util.Objects;
 import java.util.Scanner;
 
 public class AddressBook {
-	  static Scanner sc = new Scanner(System.in);
+	 static Scanner sc = new Scanner(System.in);
 	    static List<ContactPerson> cont = new ArrayList<>();
 //	    Uses information was storing.
 	    public static void addContact(String firstName, String lastName, String email, long phoneNumber, int zip, String city, String state, String address){
@@ -131,5 +131,4 @@ public class AddressBook {
 	            }
 	        }while (flag);
 	    }
-
 }
