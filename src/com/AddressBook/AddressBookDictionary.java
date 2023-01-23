@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class AddressBookDictionary {
 
-	  static HashMap<String, AddressBook> dic = new HashMap<>();
+	 static HashMap<String, AddressBook> dic = new HashMap<>();
 	    static Scanner sc = new Scanner(System.in);
 
 	    public static void main(String[] args) {
@@ -18,7 +18,8 @@ public class AddressBookDictionary {
 	            System.out.println("2. Please 2 to view Address Book");
 	            System.out.println("3. Please 3 to view the Person in City or State");
 	            System.out.println("4. Please 4 to view the Person by City or State");
-	            System.out.println("5. Please 5 to exit");
+	            System.out.println("5. Please 5 to view the count by City or State");
+	            System.out.println("6. Please 6 to exit");
 	            System.out.println();
 
 	            System.out.print("Please enter the Chosen Option ::: ");
@@ -73,6 +74,31 @@ public class AddressBookDictionary {
 	                    }
 	                    break;
 	                case 5:
+	                    System.out.print("Please enter the City or State ::: ");
+	                    String cs = sc.next();
+	                    if (cs.equalsIgnoreCase("city")){
+	                        System.out.print("Please enter the city ::: ");
+	                        String city = sc.next();
+	                        int cityCount = 0;
+	                        dic.values().stream().forEach((ele) -> {
+	                            ele.cityPersonMap.entrySet().stream().filter((ele2) ->
+	                                    ele2.getKey().equalsIgnoreCase(city)
+	                            ).count();
+	                        });
+	                        System.out.println("Total Count ::: "+cityCount);
+	                    } else if (cs.equalsIgnoreCase("state")) {
+	                        System.out.print("Please enter the state ::: ");
+	                        String state = sc.next();
+	                        dic.values().stream().forEach((ele) -> {
+	                            ele.statePersonMap.entrySet().stream().filter((ele2) ->
+	                                    ele2.getKey().equalsIgnoreCase(state)
+	                            ).count();
+	                        });
+	                    } else {
+	                        System.out.println("Invalid input.... Please enter 'City' || 'State'");
+	                    }
+	                    break;
+	                case 6:
 	                    flag = false;
 	                    break;
 	                default:
@@ -80,5 +106,7 @@ public class AddressBookDictionary {
 	                    break;
 	            }
 	        }while (flag);
+	        
+	        
 	    }
 }
